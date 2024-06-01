@@ -44,4 +44,13 @@ export default defineConfig({
 });
 ```
 
-`sourceSVGDir`支持子目录
+## Other
+- `sourceSVGDir`支持子目录
+- vscode 安装 `antfu.iconify` 插件后，在项目根目录新建 `.vscode` 文件夹，其中 `settings.json`设置为
+```JSON
+  "iconify.customCollectionJsonPaths": [
+    "./iconify.json"
+  ]
+```
+这样 vscode 中即可预览 SVG icon
+<img src="./image.png" />
