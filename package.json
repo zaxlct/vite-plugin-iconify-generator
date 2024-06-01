@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "A Vite plugin for generating Iconify JSON from SVG files",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zaxlct/vite-plugin-iconify-generator"
+  },
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
