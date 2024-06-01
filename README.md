@@ -1,8 +1,8 @@
 # vite-plugin-iconify-generator
 
-A Vite plugin for generating Iconify JSON from SVG files.
+A Vite plugin that generates Iconify JSON from local SVG files. Supports VSCode real-time preview.
 
-一个用于从 SVG 文件生成 Iconify JSON 的 Vite 插件。
+把本地的 SVG 文件生成 Iconify JSON 的 Vite 插件。支持 VSCode 实时预览
 
 ## Features 特性
 
