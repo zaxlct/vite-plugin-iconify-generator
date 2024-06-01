@@ -1,0 +1,27 @@
+{
+  "name": "vite-plugin-iconify-generator",
+  "version": "0.0.1",
+  "description": "A Vite plugin for generating Iconify JSON from SVG files",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "iconify",
+    "svg",
+    "generator"
+  ],
+  "author": "zaxlct",
+  "license": "MIT",
+  "dependencies": {
+    "@iconify/tools": "^4.0.4",
+    "vite": "^5.2.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20.13.0",
+    "typescript": "^4.9.5"
+  }
+}
