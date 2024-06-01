@@ -99,8 +99,17 @@ export default function (options: IconifyPluginOptions = {}) {
         iconSet.fromSVG(name, svg)
       })
 
-      // 导出为Iconify JSON
-      const output = JSON.stringify(iconSet.export(), null, '\t')
+      // 导出为Iconify JSON，移除 width 和 height
+      const iconifyData = iconSet.export()
+      for (const iconName in iconifyData.icons) {
+        if (iconifyData.icons[iconName].width) {
+          delete iconifyData.icons[iconName].width
+        }
+        if (iconifyData.icons[iconName].height) {
+          delete iconifyData.icons[iconName].height
+        }
+      }
+      const output = JSON.stringify(iconifyData, null, '\t')
 
       // 创建输出目录
       const dir = path.dirname(targetPath)
