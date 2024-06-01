@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-iconify-generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "zaxlct",
   "description": "A Vite plugin for generating Iconify JSON from SVG files",
   "main": "dist/index.js",
