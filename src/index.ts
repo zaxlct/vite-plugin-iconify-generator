@@ -9,7 +9,7 @@ interface IconifyPluginOptions {
   prefix?: string
 }
 
-export default function iconifyPlugin(options: IconifyPluginOptions = {}) {
+export default function (options: IconifyPluginOptions = {}) {
   const {
     sourceSVGDir = 'src/assets/icons/svg', // 默认路径修改为相对路径
     target = 'iconify.json', // 默认导出位置为项目根目录
@@ -81,7 +81,7 @@ export default function iconifyPlugin(options: IconifyPluginOptions = {}) {
           // 将颜色替换为currentColor
           parseColors(svg, {
             defaultColor: 'currentColor',
-            callback: (attr, colorStr, color) => {
+            callback: (_attr, colorStr, color) => {
               return !color || isEmptyColor(color) ? colorStr : 'currentColor'
             },
           })

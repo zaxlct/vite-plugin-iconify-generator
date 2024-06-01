@@ -1,14 +1,27 @@
 {
   "name": "vite-plugin-iconify-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "author": "zaxlct",
   "description": "A Vite plugin for generating Iconify JSON from SVG files",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/zaxlct/vite-plugin-iconify-generator"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup-node src/*.ts --format cjs,esm --dts --splitting --clean",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -18,10 +31,10 @@
     "svg",
     "generator"
   ],
-  "author": "zaxlct",
   "license": "MIT",
   "dependencies": {
     "@iconify/tools": "^4.0.4",
+    "tsup": "^8.0.2",
     "vite": "^5.2.12"
   },
   "devDependencies": {
