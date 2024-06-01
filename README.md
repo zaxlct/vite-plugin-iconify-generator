@@ -26,8 +26,8 @@ Install the plugin using npm:
 npm install vite-plugin-iconify-generator
 ```
 
-
-```
+vite.js usage
+```javascript
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import iconifyPlugin from 'vite-plugin-iconify-generator';
@@ -43,3 +43,5 @@ export default defineConfig({
   ],
 });
 ```
+
+`sourceSVGDir`支持子目录
