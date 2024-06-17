@@ -111,6 +111,21 @@ export default function (options: IconifyPluginOptions = {}) {
       }
       const output = JSON.stringify(iconifyData, null, '\t')
 
+      // 如果目标文件已存在，读取内容并比较
+      let existingIcons = {}
+      try {
+        const existingContent = await fs.readFile(targetPath, 'utf8')
+        const existingData = JSON.parse(existingContent)
+        existingIcons = existingData.icons
+      } catch (err) {
+        // 文件不存在或读取错误，忽略错误
+      }
+
+      if (JSON.stringify(existingIcons) === JSON.stringify(iconifyData.icons)) {
+        console.log(`No changes detected in icons, skipping ${targetPath}`)
+        return
+      }
+
       // 创建输出目录
       const dir = path.dirname(targetPath)
       await fs.mkdir(dir, { recursive: true })
